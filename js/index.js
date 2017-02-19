@@ -48,9 +48,16 @@
 					data   : "option=login&U="+U+"&P="+P,
 					url    : 'https://www.regalosonlinecolombia.com/app_ajax.php', 
 					type   : "POST",
-					// dataType: 'json',
+					dataType: 'json',
 					success:function(response){
-                        alert(response)    
+                            if (response.error){
+                               set_error (response.error);
+                            }
+                        
+                            if (response.success){
+                               set_content(response.html);
+                            }
+                                
                     }
                     
                 })
@@ -63,10 +70,7 @@
     function set_error(msg){
         $('#error_msg').html(msg)
     }
-
-    $(function(){
-         
-        
-      
-      
-    })
+    
+    function set_content(html){
+        $('#contenidoApp').html(html)
+    }
