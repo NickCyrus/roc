@@ -76,6 +76,8 @@
     
     function use_giftcard(){
         
+          alert("A");
+         
           var id_user = $('#id_user').val();
           var id_ref  = $('#id_ref').val();
           var id_gift = $('#id_gift').val();
