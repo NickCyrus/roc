@@ -69,7 +69,38 @@
         
         
     }
+    
+    function use_giftcard(){
+        
+          var id_user = $('#id_user').val();
+          var id_ref  = $('#id_ref').val();
+          var id_gift = $('#id_gift').val();
+          
+            $.ajax({
 
+					beforeSend:function(){
+                        $('#reponse-action').addClass('loading')
+                    },
+                    crossDomain: true,    
+					data   : "option=use_giftcard&id_user="+id_user+"&id_ref="+id_ref+"&id_gift="+id_gift,
+					url    : 'https://www.regalosonlinecolombia.com/app_ajax.php', 
+					type   : "POST",
+					dataType: 'json',
+					success:function(response){
+                            if (response.error){
+                               $('#reponse-action').html(response.error);
+                            }
+                        
+                            if (response.success){
+                               $('#reponse-action').html(response.html);
+                            }
+                                
+                    },complete:function(){
+                        $('#reponse-action').removeClass('loading')
+                    }
+                    
+                }) 
+    }
 
     function login(){
         
@@ -106,7 +137,7 @@
     }
 
     function logout(){
-         $('#contenidoApp').html(login)
+         $('#contenidoApp').html(loginHTML)
     }
     
     function set_error(msg){
