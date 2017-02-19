@@ -93,7 +93,7 @@ body{
 .btn-search .search{
     border: medium none;
     
-    min-height: 49px;
+    min-height: 48px;
     min-width: 46px;
     position: absolute;
     right: 0px;

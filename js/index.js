@@ -101,7 +101,7 @@
                     
                 }) 
     }
-
+ 
     function login(){
         
         var U = $('#client_login').val();
@@ -112,6 +112,8 @@
                 $.ajax({
 
 					beforeSend:function(){
+                            $('#btnlogin').hide();
+                            set_error('Validando los datos');
                     },
                     crossDomain: true,    
 					data   : "option=login&U="+U+"&P="+P,
@@ -127,6 +129,8 @@
                                set_content(response.html);
                             }
                                 
+                    },complete : function(){
+                        $('#btnlogin').show();
                     }
                     
                 })
@@ -137,6 +141,7 @@
     }
 
     function logout(){
+         alert('ALGO')
          $('#contenidoApp').html(loginHTML)
     }
     
