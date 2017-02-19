@@ -40,10 +40,9 @@
           var id_user = $('#id_user').val();         
           
             $.ajax({
-
+ 
 					beforeSend:function(){
-                        set_content('');
-                        $('#reponse-action').addClass('loading')
+                        $('#reponse-action').html('').addClass('loading')
                         
                     },
                     crossDomain: true,    
