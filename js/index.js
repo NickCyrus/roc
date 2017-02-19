@@ -9,7 +9,14 @@
         pictureSource   = navigator.camera.PictureSourceType;
         destinationType = navigator.camera.DestinationType;
         
-        cordova.plugins.barcodeScanner.scan(
+        
+        
+    }
+    
+     
+    function showScann(){
+        
+            cordova.plugins.barcodeScanner.scan(
             
                function (result) {
                     if(!result.cancelled){
@@ -30,10 +37,8 @@
                  }
             );
         
+        
     }
-    
-     
-
     
  
 // Make the webview transparent so the video preview is visible behind it. 
