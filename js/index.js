@@ -85,7 +85,7 @@
             $.ajax({
 
 					beforeSend:function(){
-                        $('#reponse-action').addClass('loading')
+                        $('#reponse-action').val('').addClass('loading')
                     },
                     crossDomain: true,    
 					data   : "option=use_giftcard&id_user="+id_user+"&id_ref="+id_ref+"&id_gift="+id_gift,
@@ -106,6 +106,7 @@
                     }
                     
                 }) 
+    
     }
  
     function login(){
@@ -147,6 +148,7 @@
     }
 
     function logout(){
+         alert('SALIR');
          $('#contenidoApp').html(loginHTML)
     }
     
