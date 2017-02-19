@@ -75,8 +75,6 @@
     }
     
     function use_giftcard(){
-        
-          alert("A");
          
           var id_user = $('#id_user').val();
           var id_ref  = $('#id_ref').val();
@@ -85,7 +83,7 @@
             $.ajax({
 
 					beforeSend:function(){
-                        $('#reponse-action').val('').addClass('loading')
+                        $('#reponse-action').html('').addClass('loading')
                     },
                     crossDomain: true,    
 					data   : "option=use_giftcard&id_user="+id_user+"&id_ref="+id_ref+"&id_gift="+id_gift,
