@@ -34,3 +34,8 @@ body{
     padding: 10px;
     width: 86%;
 }
+
+.error_msg{
+    font-family: Arial;
+    color:#FF0000;
+}

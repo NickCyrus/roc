@@ -8,9 +8,6 @@
     function onDeviceReady() {
         pictureSource   = navigator.camera.PictureSourceType;
         destinationType = navigator.camera.DestinationType;
-        
-        
-        
     }
     
      
@@ -24,21 +21,52 @@
                            if(result.format == "QR_CODE"){
                                 var value = result.text;
                                 // This is the retrieved content of the qr code
-                                alert(value);
-                           }else{
-                              alert("Sorry, only qr codes this time ;)");
-                           }
-                    }else{
-                      alert("The user has dismissed the scan");
-                    }
+                                return value;
+                           } 
+                    } 
                  },
                  function (error) {
-                      alert("An error ocurred: " + error);
-                 }
-            );
+                      alert("Ha ocurrido un error: " + error);
+                 },
+                  {
+                      prompt : "Por favor ubique el QR en centro de la pantalla"
+                  });
+    }
+    
+    function login(){
         
+        var U = $('#client_login').val();
+        var P  = $('#client_pass').val();
+        
+        if (U && P){
+                
+                $.ajax({
+
+					beforeSend:function(){
+                    },
+                    crossDomain: true,    
+					data   : "option=login&U="+U+"&P="+P,
+					url    : 'https://www.regalosonlinecolombia.com/app_ajax.php', 
+					type   : "POST",
+					// dataType: 'json',
+					success:function(response){
+                        alert(response)    
+                    }
+                    
+                })
+        }else{
+           set_error('Todos los datos son requeridos.'); 
+        }
         
     }
     
- 
-// Make the webview transparent so the video preview is visible behind it. 
+    function set_error(msg){
+        $('#error_msg').html(msg)
+    }
+
+    $(function(){
+         
+        
+      
+      
+    })
