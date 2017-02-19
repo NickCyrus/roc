@@ -9,24 +9,30 @@
         pictureSource   = navigator.camera.PictureSourceType;
         destinationType = navigator.camera.DestinationType;
         
-        QRScanner.show();
+        cordova.plugins.barcodeScanner.scan(
+            
+               function (result) {
+                    if(!result.cancelled){
+                           // In this case we only want to process QR Codes
+                           if(result.format == "QR_CODE"){
+                                var value = result.text;
+                                // This is the retrieved content of the qr code
+                                console.log(value);
+                           }else{
+                              alert("Sorry, only qr codes this time ;)");
+                           }
+                    }else{
+                      alert("The user has dismissed the scan");
+                    }
+                 },
+                 function (error) {
+                      alert("An error ocurred: " + error);
+                 }
+            );
         
     }
     
-    QRScanner.scan(function(err, contents){
-      if(err){
-        if(err.name === 'SCAN_CANCELED') {
-          console.error('The scan was canceled before a QR code was found.');
-        } else {
-          console.error(err._message);
-        }
-      }
-      console.log('Scan returned: ' + contents);
-    });
-    
-     QRScanner.getStatus(function(status){
-        alert(status);
-     });
+     
 
     
  
