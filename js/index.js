@@ -38,7 +38,12 @@
         
           $ref = ($ref) ? $ref : $('#ref').val();
           var id_user = $('#id_user').val();         
-          
+        
+            if (!$ref){
+                $('#ref').focus();
+                return false;
+            }
+         
             $.ajax({
  
 					beforeSend:function(){
