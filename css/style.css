@@ -85,14 +85,14 @@ body{
 
 .btn-search{
     position: relative;
-    width: 98%;
+    width: 90%;
     margin: auto
 }
 
 .btn-search .search{
     border: medium none;
     
-    min-height: 50px;
+    min-height: 49px;
     min-width: 46px;
     position: absolute;
     right: 0px;
@@ -133,6 +133,7 @@ body{
     margin: 10px auto;
     min-height: 258px;
     width: 98%;
+    color:#FFF;
 }
 
 .loading{
