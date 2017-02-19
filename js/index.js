@@ -9,6 +9,8 @@
     function onDeviceReady() {
         pictureSource   = navigator.camera.PictureSourceType;
         destinationType = navigator.camera.DestinationType;
+        
+        screen.lockOrientation('landscape');
     }
     
      
@@ -145,7 +147,6 @@
     }
 
     function logout(){
-         alert('SALIR');
          $('#contenidoApp').html(loginHTML)
     }
     
