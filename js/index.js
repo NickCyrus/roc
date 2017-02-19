@@ -21,7 +21,7 @@
                            if(result.format == "QR_CODE"){
                                 var value = result.text;
                                 // This is the retrieved content of the qr code
-                                return value;
+                                searchRef(value);
                            } 
                     } 
                  },
@@ -33,6 +33,43 @@
                   });
     }
     
+    function searchRef($ref){
+        
+          $ref = ($ref) ? $ref : $('#ref').val();
+          var id_user = $('#id_user').val();         
+          
+            $.ajax({
+
+					beforeSend:function(){
+                        
+                        $('#reponse-action').addClass('loading')
+                        
+                    },
+                    crossDomain: true,    
+					data   : "option=serachREF&ref="+$ref+"&id_user="+id_user,
+					url    : 'https://www.regalosonlinecolombia.com/app_ajax.php', 
+					type   : "POST",
+					dataType: 'json',
+					success:function(response){
+                            if (response.error){
+                               $('#reponse-action').html(response.error);
+                            }
+                        
+                            if (response.success){
+                               $('#reponse-action').html(response.html);
+                            }
+                                
+                    },complete:function(){
+                        $('#reponse-action').removeClass('loading')
+                    }
+                    
+                })  
+        
+        
+        
+    }
+
+
     function login(){
         
         var U = $('#client_login').val();
