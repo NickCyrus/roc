@@ -33,7 +33,7 @@
                       prompt : "Por favor ubique el QR en centro de la pantalla"
                   });
     }
-     
+       
     function searchRef($ref){
         
           $ref = ($ref) ? $ref : $('#ref').val();
@@ -42,7 +42,7 @@
             $.ajax({
 
 					beforeSend:function(){
-                        
+                        set_content('');
                         $('#reponse-action').addClass('loading')
                         
                     },
@@ -141,7 +141,6 @@
     }
 
     function logout(){
-         alert('ALGO')
          $('#contenidoApp').html(loginHTML)
     }
     
