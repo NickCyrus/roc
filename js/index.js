@@ -1,7 +1,8 @@
     var pictureSource;    
     var destinationType;
     var strImgBase64
-    var login = ''
+    var loginHTML
+    
     document.addEventListener("deviceready",onDeviceReady,false);
     
    
@@ -117,5 +118,5 @@
     }
     
     $(function(){
-            login =  $('#login').html()
+         loginHTML = $('#login').html();
     })
