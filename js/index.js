@@ -9,10 +9,20 @@
         pictureSource   = navigator.camera.PictureSourceType;
         destinationType = navigator.camera.DestinationType;
         
-       // QRScanner.show();
+        QRScanner.show();
         
     }
-
+    
+    QRScanner.scan(function(err, contents){
+      if(err){
+        if(err.name === 'SCAN_CANCELED') {
+          console.error('The scan was canceled before a QR code was found.');
+        } else {
+          console.error(err._message);
+        }
+      }
+      console.log('Scan returned: ' + contents);
+    });
     
      QRScanner.getStatus(function(status){
         alert(status);
