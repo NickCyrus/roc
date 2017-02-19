@@ -48,7 +48,6 @@
  
 					beforeSend:function(){
                         $('#reponse-action').html('').addClass('loading')
-                        
                     },
                     crossDomain: true,    
 					data   : "option=serachREF&ref="+$ref+"&id_user="+id_user,
