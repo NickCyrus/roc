@@ -17,7 +17,7 @@
                            if(result.format == "QR_CODE"){
                                 var value = result.text;
                                 // This is the retrieved content of the qr code
-                                console.log(value);
+                                alert(value);
                            }else{
                               alert("Sorry, only qr codes this time ;)");
                            }
