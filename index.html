@@ -12,12 +12,21 @@
     <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
-     
-    <div id="botonera" class="botonera">
-        <button onclick="capturePhoto();" id="btnCapture">Capture Photo</button>
-    </div>
-    
-
-    
+        <div id="contenidoApp">
+                
+                <div class="logo">
+                    <img src="css/logo1.png" />
+                </div>
+                <div class="form" align="center">
+                        <form action="" onsubmit="return false;" align="center">
+                            
+                          <input type="text" name="client_login" id="client_login" placeholder="ID CLIENTE" required class="input-rounded">   
+                          <input type="password" name="client_pass" id="client_pass" placeholder="CONTRASEÑA" required class="input-rounded"> 
+                          <button class="btnlogin" onclick="showScann()">ENTRAR</button>    
+                        </form>
+                    
+                     
+                </div>
+        </div>
 </body>
 </html> 
