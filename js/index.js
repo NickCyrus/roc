@@ -10,7 +10,7 @@
         pictureSource   = navigator.camera.PictureSourceType;
         destinationType = navigator.camera.DestinationType;
         
-        screen.lockOrientation('landscape');
+        screen.lockOrientation('portrait');
     }
     
      
