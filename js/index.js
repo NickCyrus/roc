@@ -32,7 +32,7 @@
                       prompt : "Por favor ubique el QR en centro de la pantalla"
                   });
     }
-    
+     
     function searchRef($ref){
         
           $ref = ($ref) ? $ref : $('#ref').val();
