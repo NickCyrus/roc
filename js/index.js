@@ -1,7 +1,7 @@
     var pictureSource;    
     var destinationType;
     var strImgBase64
-    
+    var login = ''
     document.addEventListener("deviceready",onDeviceReady,false);
     
    
@@ -89,7 +89,7 @@
 					success:function(response){
                             if (response.error){
                                set_error (response.error);
-                            }
+                             }
                         
                             if (response.success){
                                set_content(response.html);
@@ -103,6 +103,10 @@
         }
         
     }
+
+    function logout(){
+         $('#contenidoApp').html(login)
+    }
     
     function set_error(msg){
         $('#error_msg').html(msg)
@@ -111,3 +115,7 @@
     function set_content(html){
         $('#contenidoApp').html(html)
     }
+    
+    $(function(){
+            login =  $('#login').html()
+    })

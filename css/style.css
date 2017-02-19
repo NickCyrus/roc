@@ -81,18 +81,19 @@ body{
     text-align: center;
     font-size: 24px;
     border:none;
+    width: 100%;
 }
 
 .btn-search{
     position: relative;
-    width: 90%;
+    width: 86%;
     margin: auto
 }
 
 .btn-search .search{
     border: medium none;
     
-    min-height: 49px;
+    min-height: 50px;
     min-width: 46px;
     position: absolute;
     right: 0px;
@@ -133,7 +134,6 @@ body{
     margin: 10px auto;
     min-height: 258px;
     width: 98%;
-    color:#FFF;
 }
 
 .loading{
